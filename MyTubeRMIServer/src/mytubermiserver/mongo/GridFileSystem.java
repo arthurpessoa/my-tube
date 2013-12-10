@@ -23,7 +23,6 @@ public class GridFileSystem {
 
     private final String hostAddress;
     private final int portAddress;
-    private long receivedVideoLenght;
     
     public GridFileSystem(String hostname, int port) {
         hostAddress = hostname;

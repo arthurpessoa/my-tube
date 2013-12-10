@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">MyTube</string>
+    <string name="title_video_detail">Video Detail</string>
+
+</resources>

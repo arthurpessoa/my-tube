@@ -6,10 +6,12 @@
 package mytubermiserver;
 
 
-import mytubermiserver.rmi.ServerImplementation;
+import java.rmi.AlreadyBoundException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.rmi.RemoteException;
+import java.rmi.RMISecurityManager;
+import static java.rmi.registry.LocateRegistry.createRegistry;
 
 
 /**
@@ -20,18 +22,27 @@ public class MyTubeRMIServer {
 
     /**
      * @param args the command line arguments
+     * @throws java.rmi.AlreadyBoundException
      */
-    public static void main(String[] args) {
+
+    public static void main(String[] args) throws AlreadyBoundException {
 
         try {
+            
             ServerImplementation localObject = new ServerImplementation();
             //Naming.rebind("rmi:///Rem", localObject);
-            Registry reg = LocateRegistry.createRegistry(1099);
+       
+
+            
+            Registry reg = createRegistry(1099);
+            
             reg.rebind("MyTubeRMI", localObject);
+            System.out.println("Registered: " + "MyTubeRMI" + " -> " +
+		reg.getClass().getName() + "[" + reg + "]");
             
             System.out.println("MyTube RMIServer Online!");
         } catch (RemoteException re) {
             System.out.println("RemoteException: " + re);
         }       
-    }
+    } 
 }
