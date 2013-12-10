@@ -20,3 +20,21 @@ sudo service mongodb start
 Parar o Serviço
 sudo service mongodb stop
 
+
+
+-----------------------------------
+1.1 - Corba
+-----------------------------------
+
+Executar
+omniidl idserver.idl
+idlj idserver.idl
+javac *.java
+sudo mongod 
+(em outro terminal) 
+orbd -ORBInitialPort 2089 -serverPollingTime 200&
+
+(segundo terminal)
+python server.py
+java Client -ORBInitialPort 2809 -ORBInitialHost localhost&
+

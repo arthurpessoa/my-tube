@@ -1,0 +1,6 @@
+module ProjSD {
+	interface IdServer {
+		string novaChave(); //retorna uma nova chave
+  		boolean verificaChave(in string chave);
+	};
+};
