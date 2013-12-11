@@ -3,5 +3,15 @@
 
     <string name="app_name">MyTube</string>
     <string name="title_video_detail">Video Detail</string>
+    <string name="uploadtext">Upload</string>
+    <string name="uploadtitle">Upload de Videos</string>
+    <string name="selectfile">Selecionar</string>
+    <string name="selectedfiletext">Nenhum Arquivo selecionado.</string>
+    <string name="uploadButton">Upload</string>
+    <string name="uploadTextHint">Selecione o video:</string>
+    <string name="descriptionTextHint">Descrição do vídeo:</string>
+    <string name="downloadbutton">Procurar</string>
+    <string name="downloadtitle">Download de Vídeos</string>
+    <string name="selecionaVideodownload">Digite o nome do vídeo:</string>
 
 </resources>

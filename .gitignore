@@ -1,2 +1,6 @@
 /MyTubeRMIServer/dist/
 /.metadata/
+/RMIWSTestClient/nbproject/private/
+/RMIWSTestClient/build/
+/WSClientTest/nbproject/private/
+/WSClientTest/build/

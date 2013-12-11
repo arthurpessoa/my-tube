@@ -14,7 +14,19 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int video_detail=0x7f060002;
+        public static final int RelativeLayout=0x7f060002;
+        public static final int buttonDownload=0x7f060006;
+        public static final int buttonUpload=0x7f06000b;
+        public static final int chooseFilebtn=0x7f060009;
+        public static final int editTextDescription=0x7f06000d;
+        public static final int editTextVideo=0x7f060005;
+        public static final int textSelectedFile=0x7f06000a;
+        public static final int textTitle=0x7f060008;
+        public static final int textViewDescription=0x7f06000e;
+        public static final int textViewSelecVideo=0x7f060004;
+        public static final int textViewTitle=0x7f060003;
+        public static final int textViewUpload2=0x7f06000c;
+        public static final int video_detail=0x7f060007;
         public static final int video_detail_container=0x7f060000;
         public static final int video_list=0x7f060001;
     }
@@ -37,11 +49,23 @@ public final class R {
          */
         public static final int activity_video_list=0x7f030001;
         public static final int activity_video_twopane=0x7f030002;
-        public static final int fragment_video_detail=0x7f030003;
+        public static final int download_layout=0x7f030003;
+        public static final int fragment_video_detail=0x7f030004;
+        public static final int upload_layout=0x7f030005;
     }
     public static final class string {
         public static final int app_name=0x7f040000;
+        public static final int descriptionTextHint=0x7f040008;
+        public static final int downloadbutton=0x7f040009;
+        public static final int downloadtitle=0x7f04000a;
+        public static final int selecionaVideodownload=0x7f04000b;
+        public static final int selectedfiletext=0x7f040005;
+        public static final int selectfile=0x7f040004;
         public static final int title_video_detail=0x7f040001;
+        public static final int uploadButton=0x7f040006;
+        public static final int uploadTextHint=0x7f040007;
+        public static final int uploadtext=0x7f040002;
+        public static final int uploadtitle=0x7f040003;
     }
     public static final class style {
         /** 
