@@ -32,7 +32,7 @@ public class MyTubeRMIClient {
     /**
      * @param args the command line arguments
      */
-    /*
+    
     public static void main(String[] args) {
         
         System.setProperty("com.healthmarketscience.rmiio.exporter.port", "6667");
@@ -43,7 +43,7 @@ public class MyTubeRMIClient {
             Server server = (Server) registry.lookup("MyTubeRMI");
 
             System.out.println(server.testConnection());
-
+/*
             //ENVIAR ARQUIVO PRO SERVER
             
             InputStream istream = new FileInputStream("e://music.mp3");
@@ -55,24 +55,25 @@ public class MyTubeRMIClient {
             ostream.close();
           
             server.saveInDatabase("arthur");
-            
+                            */
              //RECEBER ARQUIVO DO SERVER
-             InputStream istreamSaida = RemoteInputStreamClient.wrap(server.getFile("arthur"));
+             InputStream istreamSaida = RemoteInputStreamClient.wrap(server.getFile("aaa"));
             
              int read;
-             try (FileOutputStream out = new FileOutputStream("e:/music2.mp3")) {
+             try (FileOutputStream out = new FileOutputStream("e:/music2.jpg")) {
              byte[] bytes = new byte[1024];
              while ((read = istreamSaida.read(bytes)) != -1) {
              out.write(bytes, 0, read);
              }
              out.close();
              } 
+
         } catch (RemoteException | NotBoundException e) {
             System.out.println("Exception: " + e);
         } catch (IOException ex) {
             System.out.println("Exception: " + ex);
         }
 
-    }
-*/    
+
+    }   
 }

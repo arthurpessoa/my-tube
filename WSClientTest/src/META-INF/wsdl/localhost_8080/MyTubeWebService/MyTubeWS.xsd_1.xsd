@@ -1,9 +1,71 @@
 <?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.3 (tags/2.3-7528; 2013-04-29T19:34:10+0000) JAXWS-RI/2.2.8 JAXWS/2.2 svn-revision#unknown. --><xs:schema xmlns:tns="http://mytube.com/" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://mytube.com/">
 
 <xs:import namespace="http://www.w3.org/2005/05/xmlmime" schemaLocation="http://www.w3.org/2005/05/xmlmime"/>
+<xs:element name="FileNotFoundException" type="tns:FileNotFoundException"/>
+
+<xs:element name="IOException" type="tns:IOException"/>
+
+<xs:element name="NotBoundException" type="tns:NotBoundException"/>
+
+<xs:element name="download" type="tns:download"/>
+
+<xs:element name="downloadResponse" type="tns:downloadResponse"/>
+
+<xs:element name="getRead" type="tns:getRead"/>
+
+<xs:element name="getReadResponse" type="tns:getReadResponse"/>
+
+<xs:element name="initStream" type="tns:initStream"/>
+
+<xs:element name="initStreamResponse" type="tns:initStreamResponse"/>
+
+<xs:element name="stopStream" type="tns:stopStream"/>
+
+<xs:element name="stopStreamResponse" type="tns:stopStreamResponse"/>
+
 <xs:element name="videoUpload" type="tns:videoUpload"/>
 
 <xs:element name="videoUploadResponse" type="tns:videoUploadResponse"/>
+
+<xs:complexType name="getRead">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getReadResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="download">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="downloadResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="FileNotFoundException">
+<xs:sequence>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="IOException">
+<xs:sequence>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="stopStream">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="stopStreamResponse">
+<xs:sequence/>
+</xs:complexType>
 
 <xs:complexType name="videoUpload">
 <xs:sequence>
@@ -14,6 +76,22 @@
 </xs:complexType>
 
 <xs:complexType name="videoUploadResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="NotBoundException">
+<xs:sequence>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="initStream">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="initStreamResponse">
 <xs:sequence/>
 </xs:complexType>
 </xs:schema>

@@ -19,7 +19,7 @@
     <target name="wsimport-client-MyTubeWS" depends="wsimport-init">
         <mkdir dir="${build.generated.dir}/jax-wsCache/MyTubeWS"/>
         <property name="wsdl-MyTubeWS" location="xml-resources/web-service-references/MyTubeWS/wsdl/localhost_8080/MyTubeWebService/MyTubeWS.wsdl"/>
-        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/MyTubeWS" destdir="${build.generated.dir}/jax-wsCache/MyTubeWS" wsdl="${wsdl-MyTubeWS}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/MyTubeWebService/MyTubeWS?wsdl" xnocompile="true" xendorsed="true" package="com.mytube.ws.wsdl">
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/MyTubeWS" destdir="${build.generated.dir}/jax-wsCache/MyTubeWS" wsdl="${wsdl-MyTubeWS}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://192.168.0.142:8080/MyTubeWebService/MyTubeWS?wsdl" xnocompile="true" xendorsed="true" package="com.mytube.ws.wsdl">
             <depends file="${wsdl-MyTubeWS}"/>
             <produces dir="${build.generated.dir}/jax-wsCache/MyTubeWS"/>
         </wsimport>

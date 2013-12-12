@@ -7,21 +7,116 @@
 <xsd:import namespace="http://mytube.com/" schemaLocation="http://localhost:8080/MyTubeWebService/MyTubeWS?xsd=1"/>
 </xsd:schema>
 </types>
+<message name="initStream">
+<part name="parameters" element="tns:initStream"/>
+</message>
+<message name="initStreamResponse">
+<part name="parameters" element="tns:initStreamResponse"/>
+</message>
+<message name="FileNotFoundException">
+<part name="fault" element="tns:FileNotFoundException"/>
+</message>
+<message name="NotBoundException">
+<part name="fault" element="tns:NotBoundException"/>
+</message>
+<message name="IOException">
+<part name="fault" element="tns:IOException"/>
+</message>
+<message name="getRead">
+<part name="parameters" element="tns:getRead"/>
+</message>
+<message name="getReadResponse">
+<part name="parameters" element="tns:getReadResponse"/>
+</message>
+<message name="stopStream">
+<part name="parameters" element="tns:stopStream"/>
+</message>
+<message name="stopStreamResponse">
+<part name="parameters" element="tns:stopStreamResponse"/>
+</message>
 <message name="videoUpload">
 <part name="parameters" element="tns:videoUpload"/>
 </message>
 <message name="videoUploadResponse">
 <part name="parameters" element="tns:videoUploadResponse"/>
 </message>
+<message name="download">
+<part name="parameters" element="tns:download"/>
+</message>
+<message name="downloadResponse">
+<part name="parameters" element="tns:downloadResponse"/>
+</message>
 <portType name="MyTubeWS">
+<operation name="initStream">
+<input wsam:Action="http://mytube.com/MyTubeWS/initStreamRequest" message="tns:initStream"/>
+<output wsam:Action="http://mytube.com/MyTubeWS/initStreamResponse" message="tns:initStreamResponse"/>
+<fault message="tns:FileNotFoundException" name="FileNotFoundException" wsam:Action="http://mytube.com/MyTubeWS/initStream/Fault/FileNotFoundException"/>
+<fault message="tns:NotBoundException" name="NotBoundException" wsam:Action="http://mytube.com/MyTubeWS/initStream/Fault/NotBoundException"/>
+<fault message="tns:IOException" name="IOException" wsam:Action="http://mytube.com/MyTubeWS/initStream/Fault/IOException"/>
+</operation>
+<operation name="getRead">
+<input wsam:Action="http://mytube.com/MyTubeWS/getReadRequest" message="tns:getRead"/>
+<output wsam:Action="http://mytube.com/MyTubeWS/getReadResponse" message="tns:getReadResponse"/>
+</operation>
+<operation name="stopStream">
+<input wsam:Action="http://mytube.com/MyTubeWS/stopStreamRequest" message="tns:stopStream"/>
+<output wsam:Action="http://mytube.com/MyTubeWS/stopStreamResponse" message="tns:stopStreamResponse"/>
+<fault message="tns:IOException" name="IOException" wsam:Action="http://mytube.com/MyTubeWS/stopStream/Fault/IOException"/>
+</operation>
 <operation name="videoUpload">
 <input wsam:Action="http://mytube.com/MyTubeWS/videoUploadRequest" message="tns:videoUpload"/>
 <output wsam:Action="http://mytube.com/MyTubeWS/videoUploadResponse" message="tns:videoUploadResponse"/>
+<fault message="tns:NotBoundException" name="NotBoundException" wsam:Action="http://mytube.com/MyTubeWS/videoUpload/Fault/NotBoundException"/>
+</operation>
+<operation name="download">
+<input wsam:Action="http://mytube.com/MyTubeWS/downloadRequest" message="tns:download"/>
+<output wsam:Action="http://mytube.com/MyTubeWS/downloadResponse" message="tns:downloadResponse"/>
+<fault message="tns:FileNotFoundException" name="FileNotFoundException" wsam:Action="http://mytube.com/MyTubeWS/download/Fault/FileNotFoundException"/>
+<fault message="tns:IOException" name="IOException" wsam:Action="http://mytube.com/MyTubeWS/download/Fault/IOException"/>
 </operation>
 </portType>
 <binding name="MyTubeWSPortBinding" type="tns:MyTubeWS">
 <wsp:PolicyReference URI="#MyTubeWSPortBinding_MTOM_Policy-MyTubeWSPortBinding_MTOM_Policy"/>
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+<operation name="initStream">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+<fault name="FileNotFoundException">
+<soap:fault name="FileNotFoundException" use="literal"/>
+</fault>
+<fault name="NotBoundException">
+<soap:fault name="NotBoundException" use="literal"/>
+</fault>
+<fault name="IOException">
+<soap:fault name="IOException" use="literal"/>
+</fault>
+</operation>
+<operation name="getRead">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="stopStream">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+<fault name="IOException">
+<soap:fault name="IOException" use="literal"/>
+</fault>
+</operation>
 <operation name="videoUpload">
 <soap:operation soapAction=""/>
 <input>
@@ -30,6 +125,24 @@
 <output>
 <soap:body use="literal"/>
 </output>
+<fault name="NotBoundException">
+<soap:fault name="NotBoundException" use="literal"/>
+</fault>
+</operation>
+<operation name="download">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+<fault name="FileNotFoundException">
+<soap:fault name="FileNotFoundException" use="literal"/>
+</fault>
+<fault name="IOException">
+<soap:fault name="IOException" use="literal"/>
+</fault>
 </operation>
 </binding>
 <service name="MyTubeWebService">

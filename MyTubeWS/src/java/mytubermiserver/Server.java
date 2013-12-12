@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package com.mytube.rmi;
+package mytubermiserver;
 import java.rmi.Remote;
 import com.healthmarketscience.rmiio.RemoteInputStream;
 import com.healthmarketscience.rmiio.RemoteOutputStream;
